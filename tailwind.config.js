@@ -6,7 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      colors:{
+        handro: '#32445a'
+      },
+      spacing:{
+        '15':'3.75rem'
+      }
     },
   },
   plugins: [],
