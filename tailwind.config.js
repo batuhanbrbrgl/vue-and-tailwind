@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        handro: '#32445a'
+        handro: '#32445a',
+        twitter: '#00acee'
+        
       },
       spacing:{
         '15':'3.75rem'
