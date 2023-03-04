@@ -4,6 +4,7 @@
 <div class="h-16 w-full border-b border-blue-300 flex justify-between items-center px-5 ">
   <a class="text-2xl font-medium items-center text-handro" href="#">./Handro
     <span class="text-xs text-gray-500">v2.5.0</span>
+    <span>batuhan</span>
     
   </a>
   <form class="w-1/3" action="">
