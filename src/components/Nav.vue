@@ -5,6 +5,7 @@
   <a class="text-2xl font-medium items-center text-handro" href="#">./Handro
     <span class="text-xs text-gray-500">v2.5.0</span>
     <span>batuhan</span>
+    <span>Handro</span>
     
   </a>
   <form class="w-1/3" action="">
