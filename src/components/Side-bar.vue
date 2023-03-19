@@ -1,6 +1,21 @@
+<script setup>
+
+
+
+    console.log(localStorage.getItem("dark"));
+    const darkMode=()=>{ 
+        document.documentElement.classList.toggle('dark')
+        if(document.documentElement.classList.contains('dark')){
+            localStorage.setItem("dark" ,true);
+        }
+        else{
+            localStorage.removeItem("dark");
+        }
+    }
+</script>
 <template>
   <main class="flex-auto flex">
-    <aside class="w-64 border-r p-3 border-gray-100 flex flex-col divide-solid divide-gray-300 divide-y">
+    <aside class="w-64 border-r p-3 dark:border-gray-600 dark:divide-gray-600 border-gray-100 flex flex-col overflow-auto divide-solid divide-gray-100 divide-y">
         <nav class="pb-8">
             <a href="#" class="nav">Anasayfa</a>
             <a href="#" class="nav">Akış</a>
@@ -18,7 +33,9 @@
             
         </nav>
         <div class="mt-auto pt-3">
-            <button href="#" class="bg-gray-700 w-full text-white rounded-md h-10 flex items-center justify-center hover:bg-gray-600 transition-colors">Koyu Mod
+            <button @click="darkMode()" href="#" class="bg-gray-700 w-full text-white rounded-md h-10 flex items-center justify-center hover:bg-gray-600 transition-colors">
+                <span class="hidden dark:inline">Açık Mod</span>
+                <span class="inline dark:hidden">Koyu Mod</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="ml-1" viewBox="0 0 24 24"><path fill="currentColor" d="M9.37 5.51A7.35 7.35 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4c.68 0 1.35-.09 1.99-.27A7.014 7.014 0 0 1 12 19c-3.86 0-7-3.14-7-7c0-2.93 1.81-5.45 4.37-6.49zM12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
 
             </button>
@@ -29,17 +46,17 @@
     <section class="flex-auto py-6 px-10">
         <div class="mx-auto max-w-screen-xl">
 
-            <h2 class="text-3xl font-semibold mb-3 leading-relaxed text-handro">Kendine değer kat!</h2>
-            <p class="text-handro">İyi bir kariyer için, doğru bir başlangıç gerekir. Handro'da bir çok dil ve teknolojiye ait derslerle doğru bir başlangıç yapmaya hazırsın!</p>
+            <h2 class="text-3xl font-semibold mb-3 leading-relaxed text-handro dark:text-white">Kendine değer kat!</h2>
+            <p class="text-handro dark:text-white">İyi bir kariyer için, doğru bir başlangıç gerekir. Handro'da bir çok dil ve teknolojiye ait derslerle doğru bir başlangıç yapmaya hazırsın!</p>
 
             <div class="grid grid-cols-10 mt-5 gap-7">
                 <div class="col-span-2">
-                    <a href="#" class="border flex flex-col px-4 py-7 items-center rounded">
+                    <a href="#" class="group border flex flex-col px-4 py-7 transition-colors hover:!border-red-300 items-center rounded">
                         <span class="w-24 h-24 border bg-red-100 border-red-500 rounded-full grid place-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="" viewBox="0 0 32 32"><path fill="#e44f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30L5.902 27.201z"/><path fill="#f1662a" d="m16 27.858l8.17-2.265l1.922-21.532H16v23.797z"/><path fill="#ebebeb" d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83l.759 8.517H16v-3.091zm0 8.027l-.014.004l-3.442-.929l-.22-2.465H9.221l.433 4.852l6.332 1.758l.014-.004v-3.216z"/><path fill="#fff" d="M15.989 13.407v3.091h3.806l-.358 4.009l-3.448.93v3.216l6.337-1.757l.046-.522l.726-8.137l.076-.83h-7.185zm0-6.256v3.091h7.466l.062-.694l.141-1.567l.074-.83h-7.743z"/></svg>
                                 
                         </span>
-                        <span class="mt-3 flex px-5 py-1 text-white  border border-red-500 bg-orange-600 rounded">HTML</span>
+                        <span class="mt-3 flex px-5 py-1 text-white  border border-red-500 bg-orange-600 group-hover:bg-red-500 transition-colors rounded">HTML</span>
                     </a>
                 </div>
                 <div class="col-span-2">
@@ -89,11 +106,7 @@
   </main>
 </template>
 
-<script>
-export default {
 
-}
-</script>
 
 <style>
 

@@ -1,27 +1,25 @@
 <template>
-<body class=" bg-white h-[100svh] flex flex-col">
-  <Nav/>
-  <Sidebar/>
-  <home-view/>
-  <router-view/>
-</body>
-   
-  
- 
+  <body
+    class="bg-white h-[100svh] flex flex-col dark:bg-gray-800 dark:text-white"
+  >
+    <Nav />
+    <Sidebar />
+    <home-view />
+    <router-view />
+  </body>
 </template>
 <script>
-import Nav from './components/Nav'
-import Sidebar from './components/Side-bar.vue'
+import Nav from "./components/Nav";
+import Sidebar from "./components/Side-bar.vue";
 
-export default{
-  name:'App',
-  components:{
+export default {
+  name: "App",
+  components: {
     Nav,
-    Sidebar
-  }
-}
+    Sidebar,
+  },
+  methods: {},
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
